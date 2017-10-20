@@ -32,7 +32,7 @@ func getTag(char rune, src io.Reader, terminator ...rune) <-chan string {
 		for scan.Scan() {
 			txt := scan.Text()
 			if txt != "" {
-				out <- txt
+				out <- string(char) + txt
 			}
 		}
 		if err := scan.Err(); err != nil {

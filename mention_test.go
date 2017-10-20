@@ -13,14 +13,14 @@ func TestGetTag(t *testing.T) {
 	}{
 		// {"@gernest", []string{"gernest"}},
 		// {"@gernest ", []string{"gernest"}},
-		{"@gernest@mwanza hello", []string{"gernest", "mwanza"}},
-		{"@gernest @mwanza", []string{"gernest", "mwanza"}},
-		{" @gernest @mwanza", []string{"gernest", "mwanza"}},
-		{" @gernest @mwanza ", []string{"gernest", "mwanza"}},
-		{" @gernest @mwanza @tanzania", []string{"gernest", "mwanza", "tanzania"}},
-		{" @gernest,@mwanza/Tanzania ", []string{"gernest", "mwanza"}},
-		{"how does it feel to be rejected? @ it is @loner tt ggg sjdsj dj @linker ", []string{"loner", "linker"}},
-		{"This @gernest is @@@@ @@@ @@ @ @,, @, @mwanza,", []string{"gernest", "mwanza"}},
+		{"@gernest@mwanza hello", []string{"@gernest", "@mwanza"}},
+		{"@gernest @mwanza", []string{"@gernest", "@mwanza"}},
+		{" @gernest @mwanza", []string{"@gernest", "@mwanza"}},
+		{" @gernest @mwanza ", []string{"@gernest", "@mwanza"}},
+		{" @gernest @mwanza @tanzania", []string{"@gernest", "@mwanza", "@tanzania"}},
+		{" @gernest,@mwanza/Tanzania ", []string{"@gernest", "@mwanza"}},
+		{"how does it feel to be rejected? @ it is @loner tt ggg sjdsj dj @linker ", []string{"@loner", "@linker"}},
+		{"This @gernest is @@@@ @@@ @@ @ @,, @, @mwanza,", []string{"@gernest", "@mwanza"}},
 	}
 
 	terminators := []rune{',', '/', '@'}
